@@ -1,0 +1,8 @@
+{
+  "name": "Cateq-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "885f682d"
+}

@@ -9,7 +9,7 @@ export class AppComponent {
     { title: ' Alunos', url: '/alunos/listar', icon: 'warning' },
     { title: 'Turmas', url: '/turmas/listar', icon: 'archive' },
     { title: 'Professores', url: '/professores/listar', icon: 'paper-plane' },
-    { title: 'Usuarios', url: '/usuarios/listar', icon: 'paper-plane' },
+    { title: 'Usuarios', url: '/usuarios/listar', icon: 'person-add-sharp' },
  
   ];
   public labels = [];

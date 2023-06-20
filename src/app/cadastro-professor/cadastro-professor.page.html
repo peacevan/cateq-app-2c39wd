@@ -1,13 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cadastroProfessor</ion-title>
+<ion-header _ngcontent-vlf-c84="" ng-reflect-translucent="true" role="banner" class="md header-md header-translucent header-collapse-none header-translucent-md hydrated"><!---->
+  <ion-toolbar _ngcontent-vlf-c84="" class="toolbar-title-default md in-toolbar hydrated">    
+    <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated"> Cadastro Professor
+    </ion-title>
+    <ion-icon 
+      class="ion-padding" size="large" 
+      slot="end" name="close" 
+      (click)="dismiss()">
+    </ion-icon>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastroProfessor</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="ion-margin-top ion-margin-bottom">
+    <ion-item class="ion-margin-top">
+      <ion-input aria-placeholder="Nome" [(ngModel)]="professor.nome" label="Nome" label-placement="stacked">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea label="Sobre Nome" label-placement="stacked" [(ngModel)]="professor.sobrenome"></ion-textarea>
+    </ion-item>  
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="professor.email" label="Email" label-placement="stacked"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="professor.telefone" label="telefone" label-placement="stacked"></ion-input>
+    </ion-item>
+   
+    <ion-item >      
+      <ion-grid [fixed]="true" class="ion-margin-bottom">
+        <ion-row>          
+          <ion-col>
+            <ion-label><ion-icon slot="start" name="calendar-outline"></ion-icon> Data Conclusão</ion-label>          
+          </ion-col>
+        </ion-row>
+        <ion-row>          
+          <ion-col>
+            <ion-datetime-button datetime="dataConclusao"></ion-datetime-button>          
+          </ion-col>
+        </ion-row>  
+        </ion-grid>
+    </ion-item>
+    
+    <ion-button (click)="salvar()" expand="block" shape="round" class="ion-margin">
+      <ion-icon slot="start" name="save">Salvar</ion-icon> 
+    </ion-button>
+
+  </ion-card>
+
 </ion-content>

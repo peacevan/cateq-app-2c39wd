@@ -18,13 +18,10 @@ const routes: Routes = [
       
   },
   {
-    path: 'cadastro-professor/:id',
+    path: 'professores/:id',
     loadChildren: () => import('./cadastro-professor/cadastro-professor.module').then( m => m.CadastroProfessorPageModule)
   },
- {
-  path: 'cadastro-turmas/:id',
-  loadChildren: () => import('./cadastro-turmas/cadastro-turmas.module').then( m => m.CadastroTurmasPageModule)
-},
+
 {
 path: 'turmas/:id',
 loadChildren: () => import('./turmas/turmas.module').then( m => m.TurmasPageModule)

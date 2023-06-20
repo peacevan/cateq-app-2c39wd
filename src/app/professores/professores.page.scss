@@ -1,0 +1,28 @@
+* {
+    
+    ion-card-content {
+        font-size: small;
+    }
+
+    ion-badge{
+        font-size: 1em;
+    }
+
+    .dados-info {
+        font-size: 0.75em;
+    }
+
+    .col-info {
+        margin:0;
+        padding: 0;
+    }
+    ion-no-margin{
+        margin: 0;
+    }
+
+    .botao-direita {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+}

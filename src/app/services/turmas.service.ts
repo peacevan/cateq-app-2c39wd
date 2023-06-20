@@ -37,7 +37,7 @@ export class TurmasService {
                                   dataInicio: docData['dataInicio'],
                                   dataConclusao: docData['dataConclusao'] ,
                                   dataPrevEncerramento: docData['dataPrevEncerramento'],
-                                  dataCadastro: docData['dataCadastro'].toDate(),
+                                  dataCadastro: docData['dataCadastro'],
                                   responsavel: docData['responsavel'],
                                   status: docData['status']
                                 }
@@ -50,9 +50,22 @@ export class TurmasService {
   public async adicionar(turma: Turma) {
     // @ts-ignore
     delete turma.id;
-    delete turma.dataConclusao;
-    const docRef = await addDoc(collection(this.firestoreDB,'turmas'), { ...turma });
+    if (turma.dataConclusao==undefined){
+      delete turma.dataConclusao;
 
+    }
+   
+    if (turma.dataInicio==undefined){
+      delete turma.dataInicio;
+    }
+    if (turma.dataPrevEncerramento==undefined){
+      delete turma.dataPrevEncerramento;
+    }
+    
+    console.log(turma);
+     
+    const docRef = await addDoc(collection(this.firestoreDB,'turmas'), {...turma});
+    
     return docRef;    
   }
 

@@ -13,9 +13,23 @@ const routes: Routes = [
   },
 
   {
-    path: 'cadastro-aluno/:id',
-    loadChildren: () => import('./cadastro-aluno/cadastro-aluno.module').then( m => m.CadastroAlunoPageModule)
-  }
+    path: 'alunos/:id',
+    loadChildren: () => import('./alunos/alunos.module').then( m => m.alunosPageModule)
+      
+  },
+  {
+    path: 'cadastro-professor/:id',
+    loadChildren: () => import('./cadastro-professor/cadastro-professor.module').then( m => m.CadastroProfessorPageModule)
+  },
+ {
+  path: 'cadastro-turmas/:id',
+  loadChildren: () => import('./cadastro-turmas/cadastro-turmas.module').then( m => m.CadastroTurmasPageModule)
+},
+{
+path: 'turmas/:id',
+loadChildren: () => import('./turmas/turmas.module').then( m => m.TurmasPageModule)
+}
+
 ];
 
 @NgModule({

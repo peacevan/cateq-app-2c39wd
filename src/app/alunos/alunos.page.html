@@ -1,0 +1,54 @@
+<ion-header _ngcontent-vlf-c84="" ng-reflect-translucent="true" role="banner" class="md header-md header-translucent header-collapse-none header-translucent-md hydrated"><!---->
+  <ion-toolbar _ngcontent-vlf-c84="" class="toolbar-title-default md in-toolbar hydrated">
+    <ion-buttons _ngcontent-vlf-c84="" slot="start" class="buttons-first-slot sc-ion-buttons-md-h sc-ion-buttons-md-s md hydrated">
+      <ion-menu-button _ngcontent-vlf-c84="" class="md button in-toolbar ion-activatable ion-focusable hydrated">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated">Alunos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let aluno of listaAlunos; let i = index;">
+    <ion-card-header class="ion-no-margin">
+   
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid [fixed]="true" class="dados-info ion-margin-bottom">
+        <ion-row>          
+          <ion-col class="col-info">
+            <strong>nome:</strong> {{aluno.nome}}{{aluno.sobrenome}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>          
+          <ion-col class="col-info">
+            <strong>email:</strong> {{aluno.email}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>          
+          <ion-col class="col-info">
+            <strong>telefone:</strong> {{aluno.telefone}}
+          </ion-col>
+        </ion-row>
+        <ion-row>          
+          <ion-col class="col-info">
+            <strong>sexo:</strong> {{aluno.sexo}}
+          </ion-col>
+        </ion-row>
+  
+      </ion-grid> 
+      <ion-button fill="clear" slot="end" class="botao-direita" (click)="editar(aluno)">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>     
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="adicionar()" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

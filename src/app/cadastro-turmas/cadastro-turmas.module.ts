@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CadastroAlunoPageRoutingModule } from './cadastro-aluno-routing.module';
-import { CadastroAlunoPage } from './cadastro-aluno.page';
-
-
+//import { CadastroTurmasPageRoutingModule } from './cadastro-turmas-routing.module';
+import { CadastroTurmasPage } from './cadastro-turmas.page';
 
 
 @NgModule({
@@ -13,8 +11,8 @@ import { CadastroAlunoPage } from './cadastro-aluno.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroAlunoPageRoutingModule
+   // CadastroTurmasPageRoutingModule
   ],
- // declarations: [CadastroAlunoPage]
+
 })
-export class CadastroAlunoPageModule {}
+export class CadastroTurmasPageModule {}

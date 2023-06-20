@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CadastroAlunoPageRoutingModule } from './cadastro-aluno-routing.module';
-import { CadastroAlunoPage } from './cadastro-aluno.page';
+import { CadastroAlunoPageRoutingModule } from './alunos-routing.module';
+import { alunosPage } from './alunos.page';
 
 
 
@@ -17,4 +17,4 @@ import { CadastroAlunoPage } from './cadastro-aluno.page';
   ],
  // declarations: [CadastroAlunoPage]
 })
-export class CadastroAlunoPageModule {}
+export class alunosPageModule {}

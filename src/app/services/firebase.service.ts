@@ -10,9 +10,11 @@ import { environment } from './../../environments/environment';
 })
 export class FirebaseService {
     private app: FirebaseApp;
-
+    
+   
     constructor() {
-        this.app = initializeApp(environment.firebaseConfig);
+       this.app = initializeApp(environment.firebaseConfig);
+       
      
     }
     

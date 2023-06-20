@@ -10,6 +10,11 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+
+  {
+    path: 'cadastro-aluno/:id',
+    loadChildren: () => import('./cadastro-aluno/cadastro-aluno.module').then( m => m.CadastroAlunoPageModule)
   }
 ];
 

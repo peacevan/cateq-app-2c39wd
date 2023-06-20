@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated" style="color: black !important;">Cadastro de Aluno
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+  </ion-item>
+  <form>
+    <ion-item  class="item-lines-none">
+      <ion-input class="ion-margin" name="nome" placeholder="Nome" type="text" [(ngModel)]="aluno.nome"></ion-input>
+    </ion-item>
+    <ion-item  class="item-lines-none">
+      <ion-input class="ion-margin" name="sobrenome" placeholder="Sobrenome"[(ngModel)]="aluno.sobrenome"></ion-input>
+    </ion-item>
+    <ion-item  class="item-lines-none">
+      <ion-input class="ion-margin" name="email" placeholder="Email" type="email" [(ngModel)]="aluno.email"></ion-input>
+    </ion-item>
+    <ion-item  class="item-lines-none">
+      <ion-input class="ion-margin" name="telefone" placeholder="Telefone" type="text" [(ngModel)]="aluno.telefone"></ion-input>
+    </ion-item>
+    <ion-item  class="item-lines-none">
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="fruit" placeholder="Sexo" name="sexo" class="ion-margin" [(ngModel)]="aluno.sexo" >
+            <ion-select-option value="masculino">Masculino</ion-select-option>
+            <ion-select-option value="faminino">Feminino</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    
+  <ion-button class="ion-margin" (click)="registrar()" expand="block" color="medium">
+    Salvar
+  </ion-button>
+  </form>
+</ion-content>

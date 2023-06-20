@@ -1,0 +1,31 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header  [translucent]="true">
+    <ion-toolbar>
+      <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated" style="color: black !important;">Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item  class="item-lines-none">
+    <ion-input class="ion-margin" name="login" placeholder="Email" type="Email" [(ngModel)]="usuario.login"></ion-input>
+  </ion-item>
+  <ion-item  class="item-lines-none">
+    <ion-input class="ion-margin" name="senha" placeholder="Senha"  [(ngModel)]="usuario.senha"></ion-input>
+  </ion-item>
+
+  <ion-button   class="ion-button ion-margin" expand="block" fill="clear" shape="round" (click)="logar()">
+    Entrar
+  </ion-button>
+  <ion-button   class="ion-button ion-margin" expand="block" fill="clear" shape="round" (click)="registrar()">
+    Novo usuário
+  </ion-button>
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Aviso"
+  subHeader="Acesso negado!"
+  message="Login e senha incorreto!"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>
+</ion-content>

@@ -1,0 +1,24 @@
+*{
+    font-family: 'Montserrat', sans-serif;;
+}
+
+ion-input {
+    border: solid !important;
+    border-color: rgb(102, 102, 102) !important;
+    color: rgb(7, 7, 7);
+    font-size: 1em;
+    font-weight: 900;
+}
+ion-button{
+    // border-radius: 5%;
+     //background-color: rgb(248, 20, 20) !important;
+    // color: rgb(255, 255, 255);
+
+}
+.item-lines-none ion-item {
+    --border-style: none;
+}
+ion-avatar{
+    width: 30%;
+    height: 30%;
+}

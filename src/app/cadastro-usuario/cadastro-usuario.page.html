@@ -1,0 +1,37 @@
+<ion-header _ngcontent-vlf-c84="" ng-reflect-translucent="true" role="banner" class="md header-md header-translucent header-collapse-none header-translucent-md hydrated"><!---->
+  <ion-toolbar _ngcontent-vlf-c84="" class="toolbar-title-default md in-toolbar hydrated">
+    <ion-buttons _ngcontent-vlf-c84="" slot="start" class="buttons-first-slot sc-ion-buttons-md-h sc-ion-buttons-md-s md hydrated">
+      <ion-menu-button _ngcontent-vlf-c84="" class="md button in-toolbar ion-activatable ion-focusable hydrated">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated" style="color: black !important;">Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--<ion-header>
+    <ion-toolbar>
+      <a href="/folder/inbox">
+        <ion-icon  size="large" class="ion-padding" name="return-up-back-outline" style="color:black;margin-bottom: 10px;"></ion-icon>
+      </a>
+      <ion-title size="large" style="color: black !important;font-size: 30px;margin-bottom: 5px;">Registro</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <form>
+  <ion-item  class="item-lines-none">
+    <ion-input class="ion-margin" name="login" placeholder="Digite um Email" type="email" [(ngModel)]="usuario.login"></ion-input>
+  </ion-item>
+  <ion-item  class="item-lines-none">
+    <ion-input class="ion-margin" name="senha" placeholder="Digite uma senha" [(ngModel)]="usuario.senha"></ion-input>
+  </ion-item>
+  <ion-item  class="item-lines-none">
+    <ion-input class="ion-margin" name="senharep" placeholder="Repita a senha" [(ngModel)]="usuario.senhaCheck"></ion-input>
+  </ion-item>
+<ion-button class="ion-button ion-margin"(click)="registrar()" expand="block" fill="clear" shape="round">
+  Salvar
+</ion-button>
+</form>
+
+</ion-content>

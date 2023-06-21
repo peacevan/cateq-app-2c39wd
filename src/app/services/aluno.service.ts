@@ -6,6 +6,8 @@ import {
 } from 'firebase/firestore';
 import { FirebaseService } from './firebase.service';
 import { Aluno } from '../models/aluno.model';
+//import { finalize } from 'rxjs/operators';
+//import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +15,17 @@ import { Aluno } from '../models/aluno.model';
 export class AlunoService {
 
   private firestoreDB: Firestore;
+ // private storage: AngularFireStorage;
 
   constructor(private fireServ: FirebaseService) {
+   //this.storage=storage;
     this.firestoreDB = getFirestore(this.fireServ.getApp());
+    //this.firestoreDB = getAngularFireStorage(this.fireServ.getAppFileStorage());
   }
   public async adicionar(aluno: Aluno) {
     //@ts-ignore
     delete aluno.id;
-
     const docRef = await addDoc(collection(this.firestoreDB, 'alunos'), { ...aluno });
-
     return docRef;
   }
   public async getAll(): Promise<Aluno[]> {
@@ -49,6 +52,18 @@ export class AlunoService {
 
     return alunosList;
   }
+  /*
+ public async uploadImage(file: any){
+  //const file = event.target.files[0];
+  const filePath = 'fotos_aluno' + file.name;
+  //const fileRef = this.storage.ref(filePath);
+  //const task = this.storage.upload(filePath, file);
+  const docRef = await addDoc(collection(this.firestoreDB, 'foto_alunos'), { ...file});
+  return docRef;
+
+}*/
+
+
 
 
 }

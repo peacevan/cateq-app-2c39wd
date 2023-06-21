@@ -4,8 +4,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CadastroAlunoPageRoutingModule } from './cadastro-aluno-routing.module';
 import { CadastroAlunoPage } from './cadastro-aluno.page';
-
-
+import { environment } from './../../environments/environment';
+//import { AngularFireModule } from '@angular/fire/compat';
+//import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { CadastroAlunoPage } from './cadastro-aluno.page';
     FormsModule,
     IonicModule,
     CadastroAlunoPageRoutingModule,
-	ReactiveFormsModule
+	  ReactiveFormsModule,
+	 // AngularFireModule.initializeApp(environment.firebaseConfig),
+   // AngularFireStorageModule
 	
   ],
  //declarations: [CadastroAlunoPage]

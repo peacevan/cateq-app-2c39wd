@@ -21,7 +21,7 @@
     <ion-item lines="none">
       <div style="border:solid 0px red; padding:30px">
         <ion-avatar slot="start" style=" --border-radius: 4px; width:100px;">
-          <img alt="Silhouette of a person's head" class="foto-avatar" src={{photoService.photos.webviewPath}} />
+          <img alt="Silhouette of a person's head" class="foto-avatar" src={{photoService.photos.webviewPath}}  id="foto_aluno"/>
           <ion-content>
             <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
               <ion-fab-button (click)="addPhotoToGallery()" size="small">
@@ -30,12 +30,7 @@
             </ion-fab>
           </ion-content>
         </ion-avatar>
-
-
       </div>
-
-
-
     </ion-item>
     <ion-item class="item-lines-none">
       <ion-input class="ion-margin" name="nome" placeholder="Nome" type="text" [(ngModel)]="aluno.nome"></ion-input>

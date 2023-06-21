@@ -25,7 +25,7 @@ export class PhotoService {
   });*/
    
    return capturedPhoto.dataUrl;
-   const theActualPicture = capturedPhoto.dataUrl;
+   //const theActualPicture = capturedPhoto.dataUrl;
  }
 
  async takePicture() {

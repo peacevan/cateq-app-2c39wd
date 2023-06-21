@@ -7,7 +7,6 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 })
 export class PhotoService {
   public photos: UserPhoto ={ filepath:'', webviewPath:"https://ionicframework.com/docs/img/demos/avatar.svg" };
-
   constructor() { }
   
   public async addNewToGallery() {

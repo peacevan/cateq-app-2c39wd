@@ -6,61 +6,67 @@
 </ion-header>-->
 
 
-<ion-header _ngcontent-vlf-c84="" ng-reflect-translucent="true" role="banner" class="md header-md header-translucent header-collapse-none header-translucent-md hydrated"><!---->
-  <ion-toolbar _ngcontent-vlf-c84="" class="toolbar-title-default md in-toolbar hydrated">    
+<ion-header _ngcontent-vlf-c84="" ng-reflect-translucent="true" role="banner"
+  class="md header-md header-translucent header-collapse-none header-translucent-md hydrated"><!---->
+  <ion-toolbar _ngcontent-vlf-c84="" class="toolbar-title-default md in-toolbar hydrated">
     <ion-title _ngcontent-vlf-c84="" class="md title-default hydrated"> Cadastro Alunos
     </ion-title>
-    <ion-icon 
-      class="ion-padding" size="large" 
-      slot="end" name="close" 
-      (click)="dismiss()">
+    <ion-icon class="ion-padding" size="large" slot="end" name="close" (click)="dismiss()">
     </ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card class="ion-margin-top ion-margin-bottom">
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-    </ion-avatar>
-  </ion-item>
-  <form >
+    <ion-item lines="none">
+      <div style="border:solid 0px red; padding:30px">
+        <ion-avatar slot="start" style=" --border-radius: 4px; width:100px;">
+          <img alt="Silhouette of a person's head" class="foto-avatar" src={{photoService.photos.webviewPath}} />
+          <ion-content>
+            <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+              <ion-fab-button (click)="addPhotoToGallery()" size="small">
+                <ion-icon name="camera" size="small"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </ion-content>
+        </ion-avatar>
 
 
-    <ion-item  class="item-lines-none">
+      </div>
+
+
+
+    </ion-item>
+    <ion-item class="item-lines-none">
       <ion-input class="ion-margin" name="nome" placeholder="Nome" type="text" [(ngModel)]="aluno.nome"></ion-input>
     </ion-item>
-
-   
-
-
-
-
-    <ion-item  class="item-lines-none">
-      <ion-input class="ion-margin" name="sobrenome" placeholder="Sobrenome"[(ngModel)]="aluno.sobrenome"></ion-input>
+    <ion-item class="item-lines-none">
+      <ion-input class="ion-margin" name="sobrenome" placeholder="Sobrenome" [(ngModel)]="aluno.sobrenome"></ion-input>
     </ion-item>
-    <ion-item  class="item-lines-none">
+    <ion-item class="item-lines-none">
       <ion-input class="ion-margin" name="email" placeholder="Email" type="email" [(ngModel)]="aluno.email"></ion-input>
     </ion-item>
-    <ion-item  class="item-lines-none">
-      <ion-input class="ion-margin" name="telefone" placeholder="Telefone" type="text" [(ngModel)]="aluno.telefone"></ion-input>
+
+    <ion-item class="item-lines-none">
+      <ion-input class="ion-margin" name="telefone" placeholder="Telefone" type="text"
+        [(ngModel)]="aluno.telefone"></ion-input>
     </ion-item>
-    <ion-item  class="item-lines-none">
+    <ion-item class="item-lines-none">
       <ion-list>
         <ion-item>
-          <ion-select aria-label="fruit" placeholder="Sexo" name="sexo" class="ion-margin" [(ngModel)]="aluno.sexo" >
+          <ion-select aria-label="fruit" placeholder="Sexo" name="sexo" class="ion-margin" [(ngModel)]="aluno.sexo">
             <ion-select-option value="masculino">Masculino</ion-select-option>
             <ion-select-option value="faminino">Feminino</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
     </ion-item>
-    
-  <ion-button class="ion-margin" (click)="registrar()" expand="block" color="medium">
-    Salvar
-  </ion-button>
-  </form>
-</ion-card>
+
+    <ion-button (click)="registrar()" expand="block" shape="round" class="ion-margin">
+      <ion-icon slot="start" name="save">Salvar</ion-icon>
+    </ion-button>
+
+  </ion-card>
+
 
 </ion-content>

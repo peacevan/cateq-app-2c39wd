@@ -12,33 +12,13 @@
 <ion-content [fullscreen]="true">
   <ion-card *ngFor="let professor of listaProfessores; let i = index;">
     <ion-card-header class="ion-no-margin">
-      <ion-item class="ion-no-padding ion-no-margin">
-        <ion-badge class="ion-no-margin" color="{{statusBadgeColor(professor.status)}}" slot="end">{{professor.status}}</ion-badge>
-        <ion-label>{{professor.apelido}}</ion-label>
-      </ion-item>
+ 
     </ion-card-header>
     <ion-card-content>
-      <ion-item class="ion-no-padding ion-no-margin dados-info" lines="none">        
-        <ion-badge *ngIf="professor.dataInicio" class="ion-no-margin" color="light" slot="end"><ion-icon name="calendar-number"></ion-icon> Início {{professor.dataInicio | date: 'MM/yy'}}</ion-badge>
-        <ion-label>{{(professor.descricao.length > 20 ? professor.descricao.substring(0,20) + "..." : professor.descricao)}}</ion-label>
-      </ion-item>
       <ion-grid [fixed]="true" class="dados-info ion-margin-bottom">
         <ion-row>          
           <ion-col class="col-info">
-            <strong>Responsável:</strong> {{professor.responsavel}}
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="col-info">
-            <strong>Cadastro:</strong> <span> {{professor.dataCadastro | date: 'dd/MM/yyyy'}}</span>           
-          </ion-col>
-          <ion-col class="col-info">
-            <div *ngIf="professor.status != 'Finalizada'">
-              <strong>Prev. Encerramento:</strong> <span> {{professor.dataPrevEncerramento | date: 'MM/yyyy'}}</span>           
-            </div>
-            <div *ngIf="professor.status == 'Finalizada'">
-              <strong>Finalizada em:</strong> <span> {{professor.dataConclusao | date: 'dd/MM/yyyy'}}</span> 
-            </div>
+            <strong>Nome:</strong> {{professor.nome}} {{professor.sobrenome}}
           </ion-col>
         </ion-row>
       </ion-grid> 

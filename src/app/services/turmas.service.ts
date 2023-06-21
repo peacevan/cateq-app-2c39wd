@@ -63,9 +63,7 @@ export class TurmasService {
     }
     
     console.log(turma);
-     
     const docRef = await addDoc(collection(this.firestoreDB,'turmas'), {...turma});
-    
     return docRef;    
   }
 

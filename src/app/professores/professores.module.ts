@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CadastroAlunoPageRoutingModule } from './turmas-routing.module';
-import { TurmasPage } from './turmas.page';
+import { CadastroAlunoPageRoutingModule } from './professores-routing.module';
+import { ProfessoresPage } from './professores.page';
 
 
 
@@ -17,4 +17,4 @@ import { TurmasPage } from './turmas.page';
   ],
  // declarations: [CadastroAlunoPage]
 })
-export class TurmasPageModule {}
+export class ProfessoresPageModule {}

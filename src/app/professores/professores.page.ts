@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
 
-import { Turma, statusTurma } from '../models/turma.model';
-import { ProfessoresService } from '../services/professores.service';
-import { CadastroProfessoresPage } from '../cadastro-professores/cadastro-professores.page';
+import { Professor } from '../models/professor.model';
 
+import { ProfessorService } from '../services/professor.service';
+import { CadastroProfessorPage } from '../cadastro-professor/cadastro-professor.page';
 @Component({
   selector: 'professores',
   templateUrl: './professores.page.html',
@@ -15,10 +15,10 @@ import { CadastroProfessoresPage } from '../cadastro-professores/cadastro-profes
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class ProfessoresPage implements OnInit {
-  public listaProfessores: Turma[] = [];
+  public listaProfessores: Professor[] = [];
 
   constructor(
-    private professoresServ: ProfessoresService, 
+    private professoresServ: ProfessorService, 
     private modalCtrl: ModalController) { }
 
   ngOnInit() {
@@ -27,13 +27,13 @@ export class ProfessoresPage implements OnInit {
 
   public listarProfessores() {
     this.professoresServ.getAll().then((professores) => {
-      this.listaprofessores = professores
+      this.listaProfessores = professores
     }) 
   }
 
   public async adicionar() {
     const modal = await this.modalCtrl.create({
-      component: CadastroprofessoresPage
+      component: CadastroProfessorPage
     })
 
     modal.onDidDismiss().then(() => {
@@ -43,9 +43,9 @@ export class ProfessoresPage implements OnInit {
     return await modal.present();
   }
 
-  public async editar(turma: Turma) {
+  public async editar(turma: Professor) {
     const modal = await this.modalCtrl.create({
-      component: CadastroProfessoresPage,
+      component: CadastroProfessorPage,
       componentProps: {
         turma: turma,
         edicao: true

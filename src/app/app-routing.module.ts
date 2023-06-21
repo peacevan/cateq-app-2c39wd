@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'professores/:id',
-    loadChildren: () => import('./cadastro-professor/cadastro-professor.module').then( m => m.CadastroProfessorPageModule)
+    loadChildren: () => import('./professores/professores.module').then( m => m.ProfessoresPageModule)
   },
 
 {

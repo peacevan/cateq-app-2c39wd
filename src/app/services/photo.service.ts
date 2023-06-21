@@ -23,7 +23,7 @@ export class PhotoService {
     filepath: "soon...",
     webviewPath: capturedPhoto.webPath
   });*/
-    // Here you get the image as result.
+   
    return capturedPhoto.dataUrl;
    const theActualPicture = capturedPhoto.dataUrl;
  }

@@ -6,8 +6,13 @@ import { environment } from './../../environments/environment';
 })
 export class FirebaseService {
     private app: FirebaseApp;
-    constructor() {
+	key: string;
+    name: string;
+    url: string;
+    file: File;
+    constructor(file: File) {
        this.app = initializeApp(environment.firebaseConfig);
+	   this.file = file;
     }
     
     public getApp(): FirebaseApp {

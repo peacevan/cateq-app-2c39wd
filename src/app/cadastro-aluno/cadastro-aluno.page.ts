@@ -14,7 +14,7 @@ import { PhotoService } from '../services/photo.service';
 @Component({
   selector: 'app-cadastro-aluno',
   templateUrl: './cadastro-aluno.page.html',
-  styleUrls: ['./cadastro-aluno.page.scss'],
+  styleUrls: ['./cadastro-aluno.page.scss']	,
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule,ReactiveFormsModule]
 })
@@ -27,7 +27,7 @@ export class CadastroAlunoPage implements OnInit {
   public cadastroAluno!: string;
   private activatedRoute = inject(ActivatedRoute);
   
-  public aluno: Aluno = { id: "", nome: "", sobrenome: "", email: "", telefone: "", sexo: "" };
+  public aluno: Aluno = { id: "", nome: "", sobrenome: "", email: "", telefone: "", sexo: "", fotourl:"https://ionicframework.com/docs/img/demos/avatar.svg"};
   public imagePath?="https://ionicframework.com/docs/img/demos/avatar.svg";
   constructor(
     public formBuilder: FormBuilder, 

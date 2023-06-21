@@ -16,6 +16,13 @@
     </ion-card-header>
     <ion-card-content>
         <ion-grid [fixed]="true" class="dados-info ion-margin-bottom">
+		 <ion-row>  
+		 <div style="border:solid 0px red; padding:0px">
+        <ion-avatar slot="start" style=" --border-radius: 4px;">
+          <img alt="Silhouette of a person's head" class="foto-avatar" src={{aluno.fotourl}} />
+          </ion-avatar>
+        </div>
+		  <ion-grid [fixed]="true" class="dados-info ion-margin-bottom"> 
         <ion-row>          
           <ion-col class="col-info">
             <strong>nome:</strong> {{aluno.nome}}{{aluno.sobrenome}}
@@ -38,6 +45,8 @@
             <strong>sexo:</strong> {{aluno.sexo}}
           </ion-col>
         </ion-row>
+		  </ion-grid> 
+		</ion-row>
   
       </ion-grid> 
       <ion-button fill="clear" slot="end" class="botao-direita" (click)="editar(aluno)">

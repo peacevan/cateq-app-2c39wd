@@ -9,7 +9,8 @@ export class AppComponent {
     { title: ' Alunos', url: '/alunos/list', icon: 'warning' },
     { title: 'Turmas', url: '/turmas/list', icon: 'archive' },
     { title: 'Professores', url: '/professores/list', icon: 'paper-plane' },
-    { title: 'Usuarios', url: '/usuarios/list', icon: 'person-add-sharp' },
+    //{title: 'Usuarios', url: '/usuarios/list', icon: 'person-add-sharp' },
+    //cadastro de usuário vai ficar em registrar na feature autenticação
  
   ];
   public labels = [];

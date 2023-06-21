@@ -42,8 +42,7 @@ export class AlunoService {
             email: docData['email'],
             telefone: docData['telefone'],
             sexo: docData['sexo'],
-
-
+			fotourl: docData['fotourl']?docData['fotourl']:"https://ionicframework.com/docs/img/demos/avatar.svg",
           }
         }
       );

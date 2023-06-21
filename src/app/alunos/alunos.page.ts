@@ -6,7 +6,6 @@ import { IonicModule, ModalController } from '@ionic/angular';
 import { Aluno } from '../models/aluno.model';
 import { AlunoService } from '../services/aluno.service';
 import { CadastroAlunoPage } from '../cadastro-aluno/cadastro-aluno.page';
-import { PhotoService } from '../services/photo.service';
 @Component({
   selector: 'alunos',
   templateUrl: './alunos.page.html',

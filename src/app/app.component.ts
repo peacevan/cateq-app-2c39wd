@@ -6,12 +6,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: ' Alunos', url: '/alunos/list', icon: 'warning' },
-    { title: 'Turmas', url: '/turmas/list', icon: 'archive' },
-    { title: 'Professores', url: '/professores/list', icon: 'paper-plane' },
+    { title: ' Alunos', url: '/alunos/list', icon: 'person-add' },
+    { title: 'Turmas', url: '/turmas/list', icon: 'reader' },
+    { title: 'Professores', url: '/professores/list', icon: 'person-add' },
     //{title: 'Usuarios', url: '/usuarios/list', icon: 'person-add-sharp' },
-    //cadastro de usuário vai ficar em registrar na feature autenticação
- 
+  
   ];
   public labels = [];
   constructor() {}

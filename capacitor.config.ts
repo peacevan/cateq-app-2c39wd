@@ -4,6 +4,7 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'Cateq-app',
   webDir: 'www',
+  windowsAndroidStudioPath: "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Android Studio.exe",
   server: {
     androidScheme: 'https'
   }

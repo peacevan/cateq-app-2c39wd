@@ -25,6 +25,8 @@ import { UploadService } from '../services/upload.service';
 
 export class CadastroAlunoPage implements OnInit {
   ionicForm!: FormGroup;
+  public titulo = "Cadastrar turma";
+  public edicao = false;
 
   public cadastroAluno!: string;
   private activatedRoute = inject(ActivatedRoute);
@@ -45,6 +47,8 @@ export class CadastroAlunoPage implements OnInit {
 
   ngOnInit() {
     // this.formInit();
+    if(this.edicao)
+    this.titulo = "Editar professor"
     this.cadastroAluno = this.activatedRoute.snapshot.paramMap.get('id') as string;
   }
   formInit(): void {
@@ -56,14 +60,12 @@ export class CadastroAlunoPage implements OnInit {
       telefone: new FormControl('', [Validators.required, Validators.email]),
       sexo: new FormControl('', [Validators.required, Validators.email]),
 
-
     });
 
    
   }
   get errorControl() {
     return this.ionicForm.controls;
-    return false;
   }
   public registrar() {
     console.log(this.aluno);
@@ -101,7 +103,6 @@ export class CadastroAlunoPage implements OnInit {
      var img = document.getElementById('foto_aluno') as HTMLImageElement;
      const srcValue = img.src;
      console.log(srcValue);
-     // Faz a solicitação para obter o conteúdo da imagem
      var c = document.createElement('canvas');
      c.height = img.naturalHeight;
      c.width = img.naturalWidth;
@@ -118,9 +119,7 @@ export class CadastroAlunoPage implements OnInit {
       .then(downloadUrl => {
         console.log('Imagem enviada com sucesso:', downloadUrl);
         this.aluno.fotourl=downloadUrl;
-        // Faça algo com o URL da imagem, como salvar em um banco de dados.
         this.alunoServ.adicionar(this.aluno);
-        // this.rota.navigate(['/turmas/list']);
         this.navCtrl.navigateForward('/turmas/list');
         window.location.href='/turmas/list';
       })

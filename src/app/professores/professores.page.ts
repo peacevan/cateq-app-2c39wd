@@ -43,11 +43,11 @@ export class ProfessoresPage implements OnInit {
     return await modal.present();
   }
 
-  public async editar(turma: Professor) {
+  public async editar(professor: Professor) {
     const modal = await this.modalCtrl.create({
       component: CadastroProfessorPage,
       componentProps: {
-        turma: turma,
+        professor: professor,
         edicao: true
       }
     })

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { AppComponent } from 'src/app/app.component'
+import { IonicModule,MenuController } from '@ionic/angular';
+//import { AppComponent } from '../../app/app.component'
 import { Usuario } from '../models/usuario.model';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
@@ -12,15 +12,20 @@ import { UsuarioService } from '../services/usuario.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule,AppComponent, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class LoginPage implements OnInit {
 
   public usuario:  Usuario = {id : "", login : "", senha : "", senhaCheck : ""};
   
-  constructor(private rota: Router,private userServ: UsuarioService) { }
+  constructor(private rota: Router,private userServ: UsuarioService,public menuCtrl: MenuController) { }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+   }
 
   ngOnInit() {
+  
   }
   isAlertOpen = false;
   public alertButtons = ['OK'];

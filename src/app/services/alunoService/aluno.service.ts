@@ -22,7 +22,7 @@ export class AlunoService {
     this.firestoreDB = getFirestore(this.fireServ.getApp());
   
   }
-  public async adicionar(aluno: Aluno) {
+  public async adicionar(aluno: Aluno):Promise<typeof docRef> {
     //@ts-ignore
     delete aluno.id;
     const docRef = await addDoc(collection(this.firestoreDB, 'alunos'), { ...aluno });

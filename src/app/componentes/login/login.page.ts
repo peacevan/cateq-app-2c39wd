@@ -38,8 +38,10 @@ export class LoginPage implements OnInit {
     this.userServ.autenticarUser(this.usuario)
       .then((users) => {
         ret = this.userServ.checkLogin(this.usuario);
-        if (ret)
+        if (ret){
+        this.setdadosLogin(this.usuario);
         this.rota.navigateRoot(['/folder']);
+      }
       else {
         this.isAlertOpen = true;
       }
@@ -47,17 +49,15 @@ export class LoginPage implements OnInit {
       .catch((error) => {
         // Lidar com o erro
       });
-
-
-   
+  
 
   }
   public registrar() {
     this.rota.navigateRoot(['/cadastro-usuario']);
   }
-
+  //colocar essa função na inicialização das paginas
   islogado() {
-
+   //se não tiver logado redirecionar para a tela de login
 
   }
   setdadosLogin(user: Usuario) {
@@ -75,6 +75,14 @@ export class LoginPage implements OnInit {
         data => console.log(data),
         error => console.error(error)
       );
+  }
+  logout(){
+    //remover os dados do  this.nativeStorage
+    this.nativeStorage.remove('userData')
+    .then(
+      data => console.log(data),
+      error => console.error(error)
+    );
   }
 
 }

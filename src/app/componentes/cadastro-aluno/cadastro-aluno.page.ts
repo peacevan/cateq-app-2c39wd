@@ -110,18 +110,18 @@ export class CadastroAlunoPage implements OnInit {
      ctx?.drawImage(img, 0, 0, c.width, c.height);
      var base64String = c.toDataURL();
      this.uploadImage(base64String);
-   
-
-  }
+    }
 
   uploadImage(imageData: any) {
     this.uploadService.uploadImage(imageData)
       .then(downloadUrl => {
         console.log('Imagem enviada com sucesso:', downloadUrl);
         this.aluno.fotourl=downloadUrl;
-        this.alunoServ.adicionar(this.aluno);
+        this.alunoServ.adicionar(this.aluno).then(doc => {
         this.navCtrl.navigateForward('/turmas/list');
-        window.location.href='/turmas/list';
+        window.location.href='/turmas/list';    
+      })
+      
       })
       .catch(error => {
         console.error('Erro ao enviar a imagem:', error);

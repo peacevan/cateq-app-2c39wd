@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
 
-import { Professor } from '../models/professor.model';
+import { Professor } from '../../models/professor.model';
 
-import { ProfessorService } from '../services/professor.service';
+
+import { ProfessorService } from '../../services/professorService/professor.service'
 import { CadastroProfessorPage } from '../cadastro-professor/cadastro-professor.page';
 @Component({
   selector: 'professores',

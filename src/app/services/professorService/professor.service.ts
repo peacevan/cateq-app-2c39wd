@@ -4,8 +4,8 @@ import {
     getFirestore, collection, doc,
     getDocs, getDoc, addDoc, setDoc, deleteDoc, Timestamp
 } from 'firebase/firestore';
-import { FirebaseService } from './firebase.service';
-import { Professor } from '../models/professor.model';
+import { FirebaseService } from '../firebaseService/firebase.service';
+import { Professor } from '../../models/professor.model';
 
 @Injectable({
     providedIn: 'root'

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule,NavController } from '@ionic/angular';
+import { IonicModule,MenuController,NavController } from '@ionic/angular';
 import { LoginPageModule } from '../login/login.module';
-import { Usuario } from '../models/usuario.model';
-import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../../models/usuario.model';
+import { UsuarioService } from '../../services/usuarioservice/usuario.service';
 import { FormGroup, 
   FormControl, 
   Validators,
@@ -25,7 +25,12 @@ export class CadastroUsuarioPage implements OnInit {
 
   constructor(private rota: NavController,
        private userServ: UsuarioService,
-       private formBuilder: FormBuilder) { }
+       private formBuilder: FormBuilder,
+       private menuCtrl: MenuController
+       ) { }
+       ionViewWillEnter() {
+        this.menuCtrl.enable(false);
+       }
 
   ngOnInit() {
    

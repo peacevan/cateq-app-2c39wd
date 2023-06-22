@@ -3,10 +3,8 @@ import { Firestore,
   getFirestore, collection, doc, 
   getDocs, getDoc, addDoc, setDoc, deleteDoc, Timestamp
 } from 'firebase/firestore';
-import { FirebaseService } from './firebase.service';
-
-
-import { Turma, statusTurma } from '../models/turma.model';
+import { FirebaseService } from '../firebaseService/firebase.service';
+import { Turma, statusTurma } from '../../models/turma.model';
 
 @Injectable({
   providedIn: 'root'

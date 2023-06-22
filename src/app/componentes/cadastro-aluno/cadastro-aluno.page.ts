@@ -7,11 +7,11 @@ import { FormsModule, FormGroup, FormBuilder, Validators, ReactiveFormsModule, F
 import { IonicModule, ModalController,NavController } from '@ionic/angular';
 
 import { Router } from '@angular/router';
-import { AlunoService } from '../services/aluno.service';
-import { Aluno } from '../models/aluno.model';
+import { AlunoService } from '../../services/alunoService/aluno.service';
+import { Aluno } from '../../models/aluno.model';
 import { ActivatedRoute } from '@angular/router';
-import { PhotoService } from '../services/photo.service';
-import { UploadService } from '../services/upload.service';
+import { PhotoService } from '../../services/photoService/photo.service';
+import { UploadService } from '../../services/uploadService/upload.service';
 
 @Component({
   selector: 'app-cadastro-aluno',

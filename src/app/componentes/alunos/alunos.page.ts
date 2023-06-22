@@ -3,63 +3,62 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
 
-import { Turma, statusTurma } from '../models/turma.model';
-import { TurmasService } from '../services/turmas.service';
-import { CadastroTurmasPage } from '../cadastro-turmas/cadastro-turmas.page';
-
+import { Aluno } from '../../models/aluno.model';
+import { AlunoService } from '../../services/alunoService/aluno.service';
+import { CadastroAlunoPage } from '../cadastro-aluno/cadastro-aluno.page';
 @Component({
-  selector: 'turmas',
-  templateUrl: './turmas.page.html',
-  styleUrls: ['./turmas.page.scss'],
+  selector: 'alunos',
+  templateUrl: './alunos.page.html',
+  styleUrls: ['./alunos.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class TurmasPage implements OnInit {
-  public listaTurmas: Turma[] = [];
+export class alunosPage implements OnInit {
+  public listaAlunos: Aluno[] = [];
 
   constructor(
-    private turmasServ: TurmasService, 
+    private alunosServ: AlunoService, 
     private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.listarTurmas();
+    this.listarAlunos();
   }
 
-  public listarTurmas() {
-    this.turmasServ.getAll().then((turmas) => {
-      this.listaTurmas = turmas
+  public listarAlunos() {
+    this.alunosServ.getAll().then((alunos:any) => {
+      this.listaAlunos = alunos
     }) 
   }
 
   public async adicionar() {
     const modal = await this.modalCtrl.create({
-      component: CadastroTurmasPage
+      component: CadastroAlunoPage
     })
 
     modal.onDidDismiss().then(() => {
-      this.listarTurmas();
+      this.listarAlunos();
     })
 
     return await modal.present();
   }
 
-  public async editar(turma: Turma) {
+  public async editar(aluno: Aluno) {
     const modal = await this.modalCtrl.create({
-      component: CadastroTurmasPage,
+      component: CadastroAlunoPage,
       componentProps: {
-        turma: turma,
+        aluno: aluno,
         edicao: true
       }
     })
 
     modal.onDidDismiss().then(() => {
-      this.listarTurmas()
+      this.listarAlunos()
     })
 
     return await modal.present();
   }
 
-  public statusBadgeColor(status: statusTurma): string {
+  /*public statusBadgeColor(status: statusTurma): string {
     switch(status){
       case statusTurma.pendente:
         return "secondary";
@@ -70,6 +69,6 @@ export class TurmasPage implements OnInit {
       case statusTurma.cancelada:
         return "danger";
     }
-  }
+  }*/
 
 }

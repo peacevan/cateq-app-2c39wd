@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { TurmasService } from '../services/turmas.service';
-import { novaTurma } from '../models/turma.model';
+import { TurmasService } from '../../services/turmasService/turmas.service';
+import { novaTurma } from '../../models/turma.model';
 
 @Component({
   selector: 'app-cadastro-turmas',

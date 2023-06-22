@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Categoria } from '../models/categoria.model';
+import { Categoria } from '../../models/categoria.model';
 
 @Injectable({
   providedIn: 'root'

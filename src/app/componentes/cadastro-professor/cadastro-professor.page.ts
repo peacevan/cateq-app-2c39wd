@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule,ModalController } from '@ionic/angular';
-import { novoProfessor } from '../models/professor.model';
-import { ProfessorService } from '../services/professor.service';
+import { novoProfessor } from '../../models/professor.model';
+import { ProfessorService } from '../../services/professorService/professor.service';
 
 @Component({
   selector: 'app-cadastro-professor',

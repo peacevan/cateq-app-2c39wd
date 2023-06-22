@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule,MenuController,NavController } from '@ionic/angular';
 //import { AppComponent } from '../../app/app.component'
-import { Usuario } from '../models/usuario.model';
+import { Usuario } from '../../models/usuario.model';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../services/usuario.service';
+import { UsuarioService } from '../../services/usuarioservice/usuario.service';
 
 @Component({
   selector: 'app-login',

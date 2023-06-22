@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { environment } from './../../environments/environment';
+import { environment } from './../../../environments/environment';
 //import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({

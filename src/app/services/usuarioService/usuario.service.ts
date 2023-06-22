@@ -62,11 +62,10 @@ export class UsuarioService {
     this.usuarios = this.usuarios.filter((u: Usuario) => u.id !== id);
   }
 
-  public checkLogin(user: Usuario): boolean {
-   
+  public checkLogin(user: any): boolean {
+   debugger;
     let aceito = false;
-    this.getUser(user);
-    for (let i = 0; i < this.usuarios.length; i++) {
+    for (let i = 0; i < this.usuarios.length; i++) { //elimiar esse loop
       const element = this.usuarios[i];
       if (element.login === user.login && element.senha === user.senha) {
         aceito = true;
@@ -88,4 +87,29 @@ export class UsuarioService {
     this.usuarios= users;
     return users;
   }
+
+  public async autenticarUser(user: Usuario): Promise<Usuario[]> {
+    return new Promise<any[]>(async (resolve, reject) => {
+      try {
+        const q1 = query(
+          collection(this.firestoreDB, "usuarios"),
+          where("login", "==", user.login),
+          where("senha", "==", user.senha)
+        );
+    
+        const querySnapshot = await getDocs(q1);
+        console.log(querySnapshot);
+        const users: any[] = [];
+        querySnapshot.forEach((doc) => {
+          users.push(doc.data());
+        });
+        this.usuarios = users;
+        resolve(users);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+
 }

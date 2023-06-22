@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'alunos/:id',
+    redirectTo: 'folder',
     pathMatch: 'full'
   },
    {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'folder/:id',
+    path: 'folder',
     loadChildren: () => import('./componentes/folder/folder.module').then( m => m.FolderPageModule)
   },
 

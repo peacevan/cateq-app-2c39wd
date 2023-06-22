@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule,MenuController,NavController } from '@ionic/angular';
 import { LoginPageModule } from '../login/login.module';
 import { Usuario } from '../../models/usuario.model';
-import { UsuarioService } from '../../services/usuarioservice/usuario.service';
+import { UsuarioService } from '../../services/usuarioService/usuario.service';
 import { FormGroup, 
   FormControl, 
   Validators,

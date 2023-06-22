@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireModule } from '@angular/fire/compat';
+import {MatIconModule} from '@angular/material/icon'; 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,10 +21,11 @@ import { AngularFireModule } from '@angular/fire/compat';
             AppRoutingModule,
            ReactiveFormsModule,
            AngularFireModule.initializeApp(environment.firebaseConfig),
-           AngularFireStorageModule
+           AngularFireStorageModule,
+           MatIconModule
           
           ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ NativeStorage,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

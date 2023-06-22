@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-
+import { IonicModule,NavController } from '@ionic/angular';
+import { LoginPageModule } from '../login/login.module';
 import { Usuario } from '../models/usuario.model';
 import { UsuarioService } from '../services/usuario.service';
 import { FormGroup, 
@@ -24,9 +23,12 @@ export class CadastroUsuarioPage implements OnInit {
   public formUser!: FormGroup;
 
 
-  constructor(private rota: Router,private userServ: UsuarioService,private formBuilder: FormBuilder) { }
+  constructor(private rota: NavController,
+       private userServ: UsuarioService,
+       private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+   
     this.formUser = this.formBuilder.group({
       login: ['',
             Validators.compose([
@@ -44,11 +46,9 @@ export class CadastroUsuarioPage implements OnInit {
     });
   }
   public registrar() {
-    console.log(this.usuario);
     this.userServ.add(this.usuario);
-    this.rota.navigate(['/login']);
-    
-  }
+    this.rota.navigateRoot(['/login']);
+   }
 
  
 }

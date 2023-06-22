@@ -13,8 +13,9 @@ import { CadastroUsuarioPage } from './cadastro-usuario.page';
     FormsModule,
     IonicModule,
     CadastroUsuarioPageRoutingModule,
-	ReactiveFormsModule
+    CadastroUsuarioPage,
+  	ReactiveFormsModule
   ],
  // declarations: [CadastroUsuarioPage]
 })
-export class CadastroAlunoPageModule {}
+export class CadastroUsuarioPageModule {}

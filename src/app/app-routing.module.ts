@@ -7,10 +7,10 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  /* {
-    path: 'usuario/:id',
-    loadChildren: () => import('./cadastro-usario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
-   },*/
+   {
+    path: 'cadastro-usuario',
+      loadChildren: () => import('./cadastro-usuario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
+   },
    
   {
     path: 'login',

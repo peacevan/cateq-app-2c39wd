@@ -5,5 +5,5 @@ export interface Aluno{
     email: string,
     telefone: string,
     sexo: string,
-	fotourl : string,
+	fotourl: string,
 }

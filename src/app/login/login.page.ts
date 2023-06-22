@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule,MenuController } from '@ionic/angular';
+import { IonicModule,MenuController,NavController } from '@ionic/angular';
 //import { AppComponent } from '../../app/app.component'
 import { Usuario } from '../models/usuario.model';
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 
   public usuario:  Usuario = {id : "", login : "", senha : "", senhaCheck : ""};
   
-  constructor(private rota: Router,private userServ: UsuarioService,public menuCtrl: MenuController) { }
+  constructor(private rota: NavController,private userServ: UsuarioService,public menuCtrl: MenuController) { }
 
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
@@ -36,9 +36,10 @@ export class LoginPage implements OnInit {
 
   public logar() {
     console.log(this.usuario);
+
     let ret = this.userServ.checkLogin(this.usuario);
     if(ret)
-      this.rota.navigate(['/home']);
+      this.rota.navigateRoot(['/cadastro-usuario']);
     else{
       this.isAlertOpen = true;
     }
@@ -46,7 +47,7 @@ export class LoginPage implements OnInit {
 
   }
   public registrar(){
-    this.rota.navigate(['/cadastro-usuario']);
+    this.rota.navigateRoot(['/cadastro-usuario']);
   }
 
 }
